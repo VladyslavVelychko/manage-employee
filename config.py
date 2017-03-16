@@ -1,6 +1,7 @@
 class Config(object):
 	#Common configs
 	DEBUG=False
+	SQLALCHEMY_TRACK_MODIFICATIONS=True
 
 class DevelopmentConfig(Config):
 	#Dev configs
