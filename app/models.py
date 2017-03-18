@@ -13,7 +13,7 @@ class Employee(UserMixin, db.Model):
 	username=db.Column(db.String(60), index=True,unique=True)
 	first_name=db.Column(db.String(60),index=True)
 	last_name=db.Column(db.String(60),index=True)
-	birthday=db.Column(db.Date,index=True)
+	birthday=db.Column(db.DateTime,index=True)
 	phone=db.Column(db.String(13),index=True,default='+380630000000')
 	password_hash=db.Column(db.String(128))
 	department_id=db.Column(db.Integer,db.ForeignKey('departments.id'))
