@@ -2,6 +2,7 @@ from flask import abort, render_template
 from flask_login import current_user,login_required
 
 from . import home
+from ..models import Role,Employee
 
 @home.route('/')
 def homepage():
@@ -19,3 +20,9 @@ def admin_dashboard():
 		abort(403)
 
 	return render_template('home/admin_dashboard.html',title="Dashboard")
+
+@home.route('/vacancies')
+@login_required
+def vacancies():
+	vacancies=Role.query.filter_by(id=5).all()
+	return render_template('home/vacancies.html',vacancies=vacancies,title='Open vacancies')

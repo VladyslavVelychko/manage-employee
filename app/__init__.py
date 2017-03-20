@@ -47,8 +47,8 @@ def create_app(config_name):
 	def internal_server_error(error):
 		return render_template('errors/500.html',title='Server error'),500
 
-	@app.route('/500')
-	def error():
-		abort(500)
+	#@app.route('/500')
+	#def error():
+		#abort(500)
 
 	return app
